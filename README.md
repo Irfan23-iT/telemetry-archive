@@ -1,7 +1,7 @@
-# Telemetry Dashboard System
+# CorsaData-Analytics
 
 ## Overview
-A robust, Java-based telemetry dashboard designed for real-time monitoring, data visualization, and system metric tracking. 
+A high-performance Java-based telemetry system designed to ingest, process, and visualize real-time racing data from Assetto Corsa for advanced driver performance analysis.
 
 ## Key Features
 * Real-Time Monitoring: Continuous ingestion and display of telemetry data.
