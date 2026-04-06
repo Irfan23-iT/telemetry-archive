@@ -39,6 +39,10 @@ Initialize the server and launch the application:
 Once the application server has successfully initialized, the telemetry dashboard can be accessed via a standard web browser at:
 http://localhost:8080
 
+## Snapshot 
+http://localhost:3000/dashboard/snapshot/gGiniBQxKu9gXROvg6kvxBOsUBKjv4hH?orgId=1&from=2026-04-06T08:26:04.469Z&to=2026-04-06T08:31:04.469Z&timezone=browser&refresh=5s
+
 ## Project Context
-Author: Irfan
+Author: Mohamad Irfan Danish Bin Azani
+
 Description: Comprehensive telemetry dashboard developed for system monitoring.
