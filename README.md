@@ -40,7 +40,7 @@ Once the application server has successfully initialized, the telemetry dashboar
 http://localhost:8080
 
 ## Snapshot 
-http://localhost:3000/dashboard/snapshot/gGiniBQxKu9gXROvg6kvxBOsUBKjv4hH?orgId=1&from=2026-04-06T08:26:04.469Z&to=2026-04-06T08:31:04.469Z&timezone=browser&refresh=5s
+<img width="1915" height="952" alt="asseto corsa telementry project" src="https://github.com/user-attachments/assets/c4fcbb59-0cef-4fce-aea2-86e1a1f00910" />
 
 ## Project Context
 Author: Mohamad Irfan Danish Bin Azani
