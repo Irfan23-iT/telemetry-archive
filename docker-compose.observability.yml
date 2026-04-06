@@ -1,0 +1,37 @@
+services:
+  influxdb:
+    image: influxdb:2.7
+    container_name: telemetry-influxdb
+    ports:
+      - "8086:8086"
+    environment:
+      DOCKER_INFLUXDB_INIT_MODE: setup
+      DOCKER_INFLUXDB_INIT_USERNAME: ${INFLUXDB_USERNAME:-admin}
+      DOCKER_INFLUXDB_INIT_PASSWORD: ${INFLUXDB_PASSWORD:-supersecret123}
+      DOCKER_INFLUXDB_INIT_ORG: ${INFLUXDB_ORG:-sim-racing}
+      DOCKER_INFLUXDB_INIT_BUCKET: ${INFLUXDB_BUCKET:-assetto-corsa}
+      DOCKER_INFLUXDB_INIT_ADMIN_TOKEN: ${INFLUXDB_TOKEN:-change-me-in-env}
+    volumes:
+      - influxdb-data:/var/lib/influxdb2
+
+  grafana:
+    image: grafana/grafana:11.6.0
+    container_name: telemetry-grafana
+    depends_on:
+      - influxdb
+    ports:
+      - "3000:3000"
+    environment:
+      GF_SECURITY_ADMIN_USER: ${GRAFANA_ADMIN_USER:-admin}
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_ADMIN_PASSWORD:-admin123}
+      INFLUXDB_ORG: ${INFLUXDB_ORG:-sim-racing}
+      INFLUXDB_BUCKET: ${INFLUXDB_BUCKET:-assetto-corsa}
+      INFLUXDB_TOKEN: ${INFLUXDB_TOKEN:-change-me-in-env}
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./observability/grafana/provisioning:/etc/grafana/provisioning
+      - ./observability/grafana/dashboards:/var/lib/grafana/dashboards
+
+volumes:
+  influxdb-data:
+  grafana-data:
